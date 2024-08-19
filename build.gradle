@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'io.freefair.lombok' version '8.7.1'
+}
+
+group = 'com.github.juli220620'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    implementation 'org.hibernate.orm:hibernate-core:6.6.0.Final'
+
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    implementation 'javax.el:el-api:2.2'
+    implementation 'org.glassfish.expressly:expressly:6.0.0-M1'
+    implementation 'info.picocli:picocli:4.7.6'
+
+    implementation 'org.springframework:spring-context:6.1.12'
+
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'ch.qos.logback:logback-classic:1.5.7'
+
+    implementation 'org.mapstruct:mapstruct:1.6.0'
+    implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.0'
+
+    runtimeOnly 'org.hibernate.orm:hibernate-community-dialects:6.6.0.Final'
+    runtimeOnly 'org.xerial:sqlite-jdbc:3.46.0.1'
+}
+
+jar {
+    manifest {
+        attributes['Main-Class'] = 'com.github.juli220620.cli.Cli'
+    }
+}
